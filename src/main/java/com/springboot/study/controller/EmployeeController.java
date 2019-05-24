@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -45,5 +43,15 @@ public class EmployeeController {
         modelMap.addAttribute("depts",departments);
         modelMap.addAttribute("emp",employee);
         return "emp/add";
+    }
+    @PutMapping("/emp")
+    public String updateEmp(Employee employee){
+        employeeDao.save(employee);
+        return "redirect:/emps";
+    }
+    @DeleteMapping("/emp/{id}")
+    public String deteleEmp(@PathVariable int id){
+        employeeDao.delete(id);
+        return "redirect:/emps";
     }
 }
