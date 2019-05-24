@@ -14,10 +14,14 @@ public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
 
-    @GetMapping("/emp")
+    @GetMapping("/emps")
     public String list(Model model){
         Collection<Employee> employees=employeeDao.getAll();
         model.addAttribute("employees",employees);
         return "emp/list";
+    }
+    @GetMapping("/emp")
+    public String addEmp(){
+        return "emp/add";
     }
 }
