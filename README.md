@@ -1,5 +1,5 @@
 # restful-crud
-springboot国际化处理、restful风格、错误页面处理简单实例<br>
+springboot：国际化处理、restful风格、错误页面处理、thymeleaf语法、全注解配置<br>
 1、点击页面上的按钮“中文”或“English”进行语言的切换<br>
 2、当在地址栏中输入一个不存在的地址时，将返回tmplates文件夹下error下的404.html页面<br>
 3、使用restful风格，请求看起来非常简洁易懂<br>
